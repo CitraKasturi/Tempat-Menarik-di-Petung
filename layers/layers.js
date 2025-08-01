@@ -1,35 +1,28 @@
 var wms_layers = [];
 
-var format_Kelurahan_0 = new ol.format.GeoJSON();
-var features_Kelurahan_0 = format_Kelurahan_0.readFeatures(json_Kelurahan_0, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Kelurahan_0 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_Kelurahan_0.addFeatures(features_Kelurahan_0);
-var lyr_Kelurahan_0 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_Kelurahan_0, 
-                style: style_Kelurahan_0,
-                popuplayertitle: 'Kelurahan',
-                interactive: true,
-                title: '<img src="styles/legend/Kelurahan_0.png" /> Kelurahan'
-            });
-var format_Jalan_1 = new ol.format.GeoJSON();
-var features_Jalan_1 = format_Jalan_1.readFeatures(json_Jalan_1, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Jalan_1 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_Jalan_1.addFeatures(features_Jalan_1);
-var lyr_Jalan_1 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_Jalan_1, 
-                style: style_Jalan_1,
-                popuplayertitle: 'Jalan',
-                interactive: true,
-                title: '<img src="styles/legend/Jalan_1.png" /> Jalan'
-            });
+
+        var lyr_GoogleSatellite_0 = new ol.layer.Tile({
+            'title': 'Google Satellite',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'
+            })
+        });
+
+        var lyr_OpenStreetMap_1 = new ol.layer.Tile({
+            'title': 'OpenStreetMap',
+            'type':'base',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+        });
 var format_Petung_2 = new ol.format.GeoJSON();
 var features_Petung_2 = format_Petung_2.readFeatures(json_Petung_2, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
@@ -42,93 +35,133 @@ var lyr_Petung_2 = new ol.layer.Vector({
                 source:jsonSource_Petung_2, 
                 style: style_Petung_2,
                 popuplayertitle: 'Petung',
-                interactive: true,
+                interactive: false,
                 title: '<img src="styles/legend/Petung_2.png" /> Petung'
             });
-var format_BangunanRT1_3 = new ol.format.GeoJSON();
-var features_BangunanRT1_3 = format_BangunanRT1_3.readFeatures(json_BangunanRT1_3, 
+var format_Landuse_3 = new ol.format.GeoJSON();
+var features_Landuse_3 = format_Landuse_3.readFeatures(json_Landuse_3, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_BangunanRT1_3 = new ol.source.Vector({
+var jsonSource_Landuse_3 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_BangunanRT1_3.addFeatures(features_BangunanRT1_3);
-var lyr_BangunanRT1_3 = new ol.layer.Vector({
+jsonSource_Landuse_3.addFeatures(features_Landuse_3);
+var lyr_Landuse_3 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_BangunanRT1_3, 
-                style: style_BangunanRT1_3,
-                popuplayertitle: 'Bangunan RT 1',
-                interactive: true,
-                title: '<img src="styles/legend/BangunanRT1_3.png" /> Bangunan RT 1'
+                source:jsonSource_Landuse_3, 
+                style: style_Landuse_3,
+                popuplayertitle: 'Landuse',
+                interactive: false,
+                title: '<img src="styles/legend/Landuse_3.png" /> Landuse'
             });
-var format_BangunanRT4_4 = new ol.format.GeoJSON();
-var features_BangunanRT4_4 = format_BangunanRT4_4.readFeatures(json_BangunanRT4_4, 
+var format_Bangunan_4 = new ol.format.GeoJSON();
+var features_Bangunan_4 = format_Bangunan_4.readFeatures(json_Bangunan_4, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_BangunanRT4_4 = new ol.source.Vector({
+var jsonSource_Bangunan_4 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_BangunanRT4_4.addFeatures(features_BangunanRT4_4);
-var lyr_BangunanRT4_4 = new ol.layer.Vector({
+jsonSource_Bangunan_4.addFeatures(features_Bangunan_4);
+var lyr_Bangunan_4 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_BangunanRT4_4, 
-                style: style_BangunanRT4_4,
-                popuplayertitle: 'Bangunan RT 4',
-                interactive: true,
-                title: '<img src="styles/legend/BangunanRT4_4.png" /> Bangunan RT 4'
+                source:jsonSource_Bangunan_4, 
+                style: style_Bangunan_4,
+                popuplayertitle: 'Bangunan',
+                interactive: false,
+                title: '<img src="styles/legend/Bangunan_4.png" /> Bangunan'
             });
-var format_BangunanRT2_5 = new ol.format.GeoJSON();
-var features_BangunanRT2_5 = format_BangunanRT2_5.readFeatures(json_BangunanRT2_5, 
+var format_Jalan_5 = new ol.format.GeoJSON();
+var features_Jalan_5 = format_Jalan_5.readFeatures(json_Jalan_5, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_BangunanRT2_5 = new ol.source.Vector({
+var jsonSource_Jalan_5 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_BangunanRT2_5.addFeatures(features_BangunanRT2_5);
-var lyr_BangunanRT2_5 = new ol.layer.Vector({
+jsonSource_Jalan_5.addFeatures(features_Jalan_5);
+var lyr_Jalan_5 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_BangunanRT2_5, 
-                style: style_BangunanRT2_5,
-                popuplayertitle: 'Bangunan RT 2',
-                interactive: true,
-                title: '<img src="styles/legend/BangunanRT2_5.png" /> Bangunan RT 2'
+                source:jsonSource_Jalan_5, 
+                style: style_Jalan_5,
+                popuplayertitle: 'Jalan',
+                interactive: false,
+                title: '<img src="styles/legend/Jalan_5.png" /> Jalan'
             });
-var format_BangunanRT3_6 = new ol.format.GeoJSON();
-var features_BangunanRT3_6 = format_BangunanRT3_6.readFeatures(json_BangunanRT3_6, 
+var format_TitikPenting_6 = new ol.format.GeoJSON();
+var features_TitikPenting_6 = format_TitikPenting_6.readFeatures(json_TitikPenting_6, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_BangunanRT3_6 = new ol.source.Vector({
+var jsonSource_TitikPenting_6 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_BangunanRT3_6.addFeatures(features_BangunanRT3_6);
-var lyr_BangunanRT3_6 = new ol.layer.Vector({
+jsonSource_TitikPenting_6.addFeatures(features_TitikPenting_6);
+var lyr_TitikPenting_6 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_BangunanRT3_6, 
-                style: style_BangunanRT3_6,
-                popuplayertitle: 'Bangunan RT 3',
+                source:jsonSource_TitikPenting_6, 
+                style: style_TitikPenting_6,
+                popuplayertitle: 'Titik Penting',
                 interactive: true,
-                title: '<img src="styles/legend/BangunanRT3_6.png" /> Bangunan RT 3'
+                title: '<img src="styles/legend/TitikPenting_6.png" /> Titik Penting'
             });
+var format_TempatMenarik_7 = new ol.format.GeoJSON();
+var features_TempatMenarik_7 = format_TempatMenarik_7.readFeatures(json_TempatMenarik_7, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_TempatMenarik_7 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_TempatMenarik_7.addFeatures(features_TempatMenarik_7);
+var lyr_TempatMenarik_7 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_TempatMenarik_7, 
+                style: style_TempatMenarik_7,
+                popuplayertitle: 'Tempat Menarik',
+                interactive: true,
+                title: '<img src="styles/legend/TempatMenarik_7.png" /> Tempat Menarik'
+            });
+var format_UMKM_8 = new ol.format.GeoJSON();
+var features_UMKM_8 = format_UMKM_8.readFeatures(json_UMKM_8, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_UMKM_8 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_UMKM_8.addFeatures(features_UMKM_8);
+cluster_UMKM_8 = new ol.source.Cluster({
+  distance: 30,
+  source: jsonSource_UMKM_8
+});
+var lyr_UMKM_8 = new ol.layer.Vector({
+                declutter: false,
+                source:cluster_UMKM_8, 
+                style: style_UMKM_8,
+                popuplayertitle: 'UMKM',
+                interactive: true,
+    title: 'UMKM<br />\
+    <img src="styles/legend/UMKM_8_0.png" /> Budidaya<br />\
+    <img src="styles/legend/UMKM_8_1.png" /> Hiburan<br />\
+    <img src="styles/legend/UMKM_8_2.png" /> Jasa<br />\
+    <img src="styles/legend/UMKM_8_3.png" /> Kerajinan<br />\
+    <img src="styles/legend/UMKM_8_4.png" /> Kuliner<br />\
+    <img src="styles/legend/UMKM_8_5.png" /> Penginapan<br />\
+    <img src="styles/legend/UMKM_8_6.png" /> Retail<br />' });
 
-lyr_Kelurahan_0.setVisible(true);lyr_Jalan_1.setVisible(true);lyr_Petung_2.setVisible(true);lyr_BangunanRT1_3.setVisible(true);lyr_BangunanRT4_4.setVisible(true);lyr_BangunanRT2_5.setVisible(true);lyr_BangunanRT3_6.setVisible(true);
-var layersList = [lyr_Kelurahan_0,lyr_Jalan_1,lyr_Petung_2,lyr_BangunanRT1_3,lyr_BangunanRT4_4,lyr_BangunanRT2_5,lyr_BangunanRT3_6];
-lyr_Kelurahan_0.set('fieldAliases', {'KDPPUM': 'KDPPUM', 'NAMOBJ': 'NAMOBJ', 'REMARK': 'REMARK', 'KDPBPS': 'KDPBPS', 'FCODE': 'FCODE', 'LUASWH': 'LUASWH', 'UUPP': 'UUPP', 'SRS_ID': 'SRS_ID', 'LCODE': 'LCODE', 'METADATA': 'METADATA', 'KDEBPS': 'KDEBPS', 'KDEPUM': 'KDEPUM', 'KDCBPS': 'KDCBPS', 'KDCPUM': 'KDCPUM', 'KDBBPS': 'KDBBPS', 'KDBPUM': 'KDBPUM', 'WADMKD': 'WADMKD', 'WIADKD': 'WIADKD', 'WADMKC': 'WADMKC', 'WIADKC': 'WIADKC', 'WADMKK': 'WADMKK', 'WIADKK': 'WIADKK', 'WADMPR': 'WADMPR', 'WIADPR': 'WIADPR', 'TIPADM': 'TIPADM', 'SHAPE_Leng': 'SHAPE_Leng', 'SHAPE_Area': 'SHAPE_Area', });
-lyr_Jalan_1.set('fieldAliases', {'Jenis': 'Jenis', });
+lyr_GoogleSatellite_0.setVisible(false);lyr_OpenStreetMap_1.setVisible(true);lyr_Petung_2.setVisible(true);lyr_Landuse_3.setVisible(true);lyr_Bangunan_4.setVisible(true);lyr_Jalan_5.setVisible(true);lyr_TitikPenting_6.setVisible(true);lyr_TempatMenarik_7.setVisible(true);lyr_UMKM_8.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_OpenStreetMap_1,lyr_Petung_2,lyr_Landuse_3,lyr_Bangunan_4,lyr_Jalan_5,lyr_TitikPenting_6,lyr_TempatMenarik_7,lyr_UMKM_8];
 lyr_Petung_2.set('fieldAliases', {'DUSUN': 'DUSUN', 'JMLH_JIWA': 'JMLH_JIWA', });
-lyr_BangunanRT1_3.set('fieldAliases', {'Jenis': 'Jenis', });
-lyr_BangunanRT4_4.set('fieldAliases', {'Jenis': 'Jenis', });
-lyr_BangunanRT2_5.set('fieldAliases', {'Jenis': 'Jenis', });
-lyr_BangunanRT3_6.set('fieldAliases', {'Jenis': 'Jenis', });
-lyr_Kelurahan_0.set('fieldImages', {'KDPPUM': '', 'NAMOBJ': '', 'REMARK': '', 'KDPBPS': '', 'FCODE': '', 'LUASWH': '', 'UUPP': '', 'SRS_ID': '', 'LCODE': '', 'METADATA': '', 'KDEBPS': '', 'KDEPUM': '', 'KDCBPS': '', 'KDCPUM': '', 'KDBBPS': '', 'KDBPUM': '', 'WADMKD': '', 'WIADKD': '', 'WADMKC': '', 'WIADKC': '', 'WADMKK': '', 'WIADKK': '', 'WADMPR': '', 'WIADPR': '', 'TIPADM': '', 'SHAPE_Leng': '', 'SHAPE_Area': '', });
-lyr_Jalan_1.set('fieldImages', {'Jenis': 'TextEdit', });
+lyr_Landuse_3.set('fieldAliases', {'Jenis': 'Jenis', 'layer': 'layer', 'path': 'path', });
+lyr_Bangunan_4.set('fieldAliases', {'Jenis': 'Jenis', 'layer': 'layer', 'path': 'path', });
+lyr_Jalan_5.set('fieldAliases', {'Jenis': 'Jenis', });
+lyr_TitikPenting_6.set('fieldAliases', {'Nama': 'Nama', });
+lyr_TempatMenarik_7.set('fieldAliases', {'Nama': 'Nama', 'Jenis': 'Jenis', 'Keterangan': 'Keterangan', 'Desc': 'Desc', });
+lyr_UMKM_8.set('fieldAliases', {'Nama': 'Nama', 'Jenis': 'Jenis', 'Keterangan': 'Keterangan', 'Desc': 'Desc', });
 lyr_Petung_2.set('fieldImages', {'DUSUN': '', 'JMLH_JIWA': '', });
-lyr_BangunanRT1_3.set('fieldImages', {'Jenis': '', });
-lyr_BangunanRT4_4.set('fieldImages', {'Jenis': '', });
-lyr_BangunanRT2_5.set('fieldImages', {'Jenis': '', });
-lyr_BangunanRT3_6.set('fieldImages', {'Jenis': '', });
-lyr_Kelurahan_0.set('fieldLabels', {'KDPPUM': 'no label', 'NAMOBJ': 'no label', 'REMARK': 'no label', 'KDPBPS': 'no label', 'FCODE': 'no label', 'LUASWH': 'no label', 'UUPP': 'no label', 'SRS_ID': 'no label', 'LCODE': 'no label', 'METADATA': 'no label', 'KDEBPS': 'no label', 'KDEPUM': 'no label', 'KDCBPS': 'no label', 'KDCPUM': 'no label', 'KDBBPS': 'no label', 'KDBPUM': 'no label', 'WADMKD': 'no label', 'WIADKD': 'no label', 'WADMKC': 'no label', 'WIADKC': 'no label', 'WADMKK': 'no label', 'WIADKK': 'no label', 'WADMPR': 'no label', 'WIADPR': 'no label', 'TIPADM': 'no label', 'SHAPE_Leng': 'no label', 'SHAPE_Area': 'no label', });
-lyr_Jalan_1.set('fieldLabels', {'Jenis': 'inline label - visible with data', });
+lyr_Landuse_3.set('fieldImages', {'Jenis': '', 'layer': '', 'path': '', });
+lyr_Bangunan_4.set('fieldImages', {'Jenis': '', 'layer': '', 'path': '', });
+lyr_Jalan_5.set('fieldImages', {'Jenis': 'TextEdit', });
+lyr_TitikPenting_6.set('fieldImages', {'Nama': '', });
+lyr_TempatMenarik_7.set('fieldImages', {'Nama': '', 'Jenis': '', 'Keterangan': '', 'Desc': '', });
+lyr_UMKM_8.set('fieldImages', {'Nama': 'TextEdit', 'Jenis': 'TextEdit', 'Keterangan': 'TextEdit', 'Desc': 'TextEdit', });
 lyr_Petung_2.set('fieldLabels', {'DUSUN': 'no label', 'JMLH_JIWA': 'no label', });
-lyr_BangunanRT1_3.set('fieldLabels', {'Jenis': 'no label', });
-lyr_BangunanRT4_4.set('fieldLabels', {'Jenis': 'no label', });
-lyr_BangunanRT2_5.set('fieldLabels', {'Jenis': 'no label', });
-lyr_BangunanRT3_6.set('fieldLabels', {'Jenis': 'no label', });
-lyr_BangunanRT3_6.on('precompose', function(evt) {
+lyr_Landuse_3.set('fieldLabels', {'Jenis': 'no label', 'layer': 'no label', 'path': 'no label', });
+lyr_Bangunan_4.set('fieldLabels', {'Jenis': 'no label', 'layer': 'no label', 'path': 'no label', });
+lyr_Jalan_5.set('fieldLabels', {'Jenis': 'inline label - visible with data', });
+lyr_TitikPenting_6.set('fieldLabels', {'Nama': 'inline label - visible with data', });
+lyr_TempatMenarik_7.set('fieldLabels', {'Nama': 'inline label - visible with data', 'Jenis': 'inline label - visible with data', 'Keterangan': 'inline label - visible with data', 'Desc': 'inline label - always visible', });
+lyr_UMKM_8.set('fieldLabels', {'Nama': 'inline label - visible with data', 'Jenis': 'inline label - visible with data', 'Keterangan': 'inline label - visible with data', 'Desc': 'inline label - visible with data', });
+lyr_UMKM_8.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
